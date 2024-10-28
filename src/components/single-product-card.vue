@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-white flex relative flex-col justify-between rounded-lg h-[860px] w-[630px]">
+  <div
+    class="bg-white flex relative flex-col justify-between rounded-lg h-[860px] w-[615px]"
+  >
     <div class="flex justify-center items-center flex-col gap-5 p-10">
       <h1 class="text-[#014FDF] bold text-[22px] tracking-wide">{{ data.title }}</h1>
 

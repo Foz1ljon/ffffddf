@@ -1,21 +1,26 @@
 <template>
   <div class="container w-[1280px] py-3">
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col">
       <Path
-        class="mt-14"
+        class="mt-[84px] mb-10"
         :path="'Официальный запуск новой версии IOTICS - Water (2.148.07)'"
       />
-      <h1 class="text-4xl bold tracking-wide w-[70%] text-[#020C14]">
+      <h1 class="text-5xl bold tracking-[3.36px] pb-10  text-[#020C14]">
         {{ t("singlePtitle") }}
       </h1>
 
-      <p class="text-[19px] tracking-wide text-[#ABABB9] font-normal">24.04.2024</p>
-      <h1 class="text-[#596167] bold text-[30px] tracking-wide">{{ t("tags") }}</h1>
-      <div class="flex gap-3 py-3">
-        <template v-for="(obj, i) in tags" :key="i">
-          <Tags :data="obj" :type="'sharp'" />
-        </template>
+      <p class="text-[19px] tracking-wide text-[#ABABB9] pb-10 font-normal">24.04.2024</p>
+      <div class="pb-[60px]">
+        <h1 class="text-[#596167] bold text-[30px] tracking-[2.1px] pb-5">
+          {{ t("tags") }}
+        </h1>
+        <div class="flex gap-3">
+          <template v-for="(obj, i) in tags" :key="i">
+            <Tags :data="obj" :type="'sharp'" />
+          </template>
+        </div>
       </div>
+
       <div class="bg-cover h-[720px]">
         <img src="../assets/images/iotics.png" alt="img-iotics" />
       </div>
@@ -23,7 +28,7 @@
         <p class="font-normal text-5xl text-[#020C14] tracking-wider text-center">
           {{ t("prodTitle") }}
         </p>
-        <h2 class="bold text-[#020C14] text-5xl tracking-[ 3.36px] leading-[150px] text-center">
+        <h2 class="bold text-[#020C14] text-5xl tracking-[ 3.36px] ] text-center">
           IOTICS-Water
         </h2>
       </div>
@@ -43,13 +48,16 @@
         {{ t("newVUpd") }}
       </p>
     </div>
-    <div class="grid grid-cols-2 gap-10">
-      <template v-for="(item, i) in productAbout" :key="i">
-        <SingleProductCard :data="item" />
-      </template>
+    <div class="grid grid-cols-2 gap-5">
+      <SingleProductCard
+        v-for="(item, i) in productAbout"
+        :key="i"
+        :data="item"
+        class="pr-5"
+      />
     </div>
 
-    <p class="text-[30px] text-[#020C14] tracking-wide font-normal py-8">
+    <p class="text-[30px] text-[#020C14] tracking-wide font-normal pt-[60px]">
       Команда <span class="bold">IOTICS</span> с гордостью продолжает предоставлять
       решения, которые позволяют компаниям оптимизировать операции, сокращать расходы и
       уменьшать воздействие на окружающую среду. С версией 2.148.07 менеджеры систем
@@ -57,7 +65,7 @@
       эффективное управление ресурсами.
     </p>
 
-    <div class="flex flex-col gap-10 py-6">
+    <div class="flex flex-col gap-[60px] py-[60px]">
       <QuoteCard
         :brColor="'#5A89FF'"
         :icon="'quote'"
@@ -70,7 +78,7 @@
       />
     </div>
 
-    <p class="text-[30px] font-normal tracking-wide text-[#020C14] py-4">
+    <p class="text-[30px] font-normal tracking-wide text-[#020C14] pb-[60px]">
       Для получения дополнительной информации или для записи на демонстрацию посетите наш
       веб-сайт по адресу
       <a class="text-[#0063D4] underline" href="http://demo.iotics.uz">demo.iotics.uz</a>
