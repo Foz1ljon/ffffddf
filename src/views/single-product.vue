@@ -1,5 +1,5 @@
 <template>
-  <div class="container py-3">
+  <div class="container w-[1280px] py-3">
     <div class="flex flex-col gap-5">
       <Path
         class="mt-14"
@@ -19,15 +19,17 @@
       <div class="bg-cover h-[720px]">
         <img src="../assets/images/iotics.png" alt="img-iotics" />
       </div>
-      <div class="flex flex-col gap-5 my-6">
+      <div class="flex flex-col gap-2.5 my-[60px]">
         <p class="font-normal text-5xl text-[#020C14] tracking-wider text-center">
           {{ t("prodTitle") }}
         </p>
-        <h2 class="bold text-[#020C14] text-5xl tracking-wider text-center">
+        <h2 class="bold text-[#020C14] text-5xl tracking-[ 3.36px] leading-[150px] text-center">
           IOTICS-Water
         </h2>
       </div>
-      <p class="font-normal text-[30px] text-[#020C14] tracking-wider text-start">
+      <p
+        class="font-normal text-[30px] text-[#020C14] tracking-[2.1px] leading-[150%] text-start"
+      >
         Мы рады объявить об официальном запуске
         <span class="bold">IOTICS – Water (2.148.07)</span>, последней версии нашего
         передового решения для мониторинга и управления водными системами. Это обновление
@@ -35,11 +37,13 @@
         так и пользовательский опыт для предприятий и организаций, которые полагаются на
         эффективное управление водными ресурсами.
       </p>
-      <p class="text-[30px] text-[#020C14] py-6 tracking-wide text-startr">
+      <p
+        class="text-[30px] text-[#020C14] py-[60px] tracking-[2.1px] leading-[150%] text-start"
+      >
         {{ t("newVUpd") }}
       </p>
     </div>
-    <div class="grid lg:grid-cols-2 gap-4">
+    <div class="grid grid-cols-2 gap-10">
       <template v-for="(item, i) in productAbout" :key="i">
         <SingleProductCard :data="item" />
       </template>

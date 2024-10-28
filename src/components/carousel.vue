@@ -7,7 +7,7 @@
       <div
         v-for="(item, i) in data"
         :key="`carousel-${i}`"
-        class="flex-shrink-0 w-full h-full justify-center flex items-center"
+        class="flex-shrink-0 w-full h-full flex justify-center items-center"
       >
         <div class="relative w-full max-w-[1280px] h-[720px]">
           <img
@@ -21,8 +21,9 @@
             >
               Посмотреть кейс
             </button>
+
             <div class="tracking-wide gap-2 flex items-center">
-              <p class="text-[22px] bold">{{ item.title }}</p>
+              <p class="text-[22px] font-bold">{{ item.title }}</p>
               <p class="h-2 w-2 rounded-full bg-white"></p>
               <p class="text-[22px]">{{ item.title2 }}</p>
             </div>
@@ -32,6 +33,7 @@
     </div>
   </div>
 
+  <!-- Navigation Dots -->
   <div class="flex justify-center py-5 gap-2">
     <span
       v-for="(item, index) in data"
@@ -55,10 +57,10 @@
           { image: "slider1", title: "УзМетКомбинат", title2: "Прогресс" },
           { image: "slider1", title: "УзМетКомбинат", title2: "Инновации" },
           { image: "slider1", title: "УзМетКомбинат", title2: "Достижения" },
-          { image: "slider1", title: "УзМетКомбинат", title2: "Достижения" },
         ],
         currentIndex: 0,
         interval: null,
+        isPlaying: true,
       };
     },
 
@@ -83,13 +85,35 @@
       },
       startAutoSlide() {
         this.interval = setInterval(this.nextSlide, 2000);
+        this.isPlaying = true;
+      },
+      stopAutoSlide() {
+        clearInterval(this.interval);
+        this.interval = null;
+        this.isPlaying = false;
+      },
+      toggleAutoSlide() {
+        if (this.isPlaying) {
+          this.stopAutoSlide();
+        } else {
+          this.startAutoSlide();
+        }
       },
     },
+
     mounted() {
       this.startAutoSlide();
     },
+
     beforeDestroy() {
-      clearInterval(this.interval);
+      this.stopAutoSlide();
     },
   };
 </script>
+
+<style scoped>
+  .flex-shrink-0 {
+    margin: 0;
+    padding: 0;
+  }
+</style>

@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-[#E6E8F0] w-full py-3">
-    <div class="container">
+    <div class="container w-[1280px]">
       <section class="flex justify-between flex-wrap">
         <!-- column 1 -->
         <div class="flex flex-col gap-1">
@@ -131,14 +131,16 @@
           <p>{{ $t("copyright") }}</p>
           <p class="text-[#020C14] bold">{{ $t("uzb") }}</p>
         </div>
-
-        <div
-          class="flex gap-2 divide-x-[1px] py-2 flex-wrap divide-[#7E7F80] text-[#596167]"
-        >
-          <router-link class="my-5 pl-2" v-for="(el, i) in footerBtm" :key="i" :to="el.to"
-            >{{ el.name }}
-          </router-link>
-        </div>
+      </div>
+      <div class="flex gap-2 flex-shrink-0 py-2 divide-[#7E7F80] text-[#596167]">
+        <router-link
+          class="my-5"
+          v-for="(el, i) in footerBtm"
+          :key="i"
+          :to="el.to"
+          :class="i !== footerBtm.length && i !== 0 ? 'border-l-[1px] pl-2' : ''"
+          >{{ el.name }}
+        </router-link>
       </div>
     </div>
   </footer>

@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section class="w-[1300px] container">
     <h1 class="text-center text-5xl bold flex-wrap text-[#020C14] py-4">
       {{ t("newStep") }}
     </h1>
@@ -18,51 +18,51 @@
 </template>
 
 <script>
-import { useI18n } from "vue-i18n";
-import AboutManage from "./about-energy.manage.vue";
-import Button from "../main/button.vue";
+  import { useI18n } from "vue-i18n";
+  import AboutManage from "./about-energy.manage.vue";
+  import Button from "../main/button.vue";
 
-export default {
-  components: {
-    AboutManage,
-    Button,
-  },
-  data() {
-    return {};
-  },
-
-  mounted() { },
-
-  methods: {},
-  computed: {
-    t() {
-      const { t } = useI18n();
-      return t;
+  export default {
+    components: {
+      AboutManage,
+      Button,
     },
-    info() {
-      return [
-        {
-          about: this.$t("energyManageAbout1"),
-          photo: "1",
-        },
-        {
-          about: this.$t("energyManageAbout2"),
-          photo: "2",
-        },
-        {
-          about: this.$t("energyManageAbout3"),
-          photo: "3",
-        },
-        {
-          about: this.$t("energyManageAbout4"),
-          photo: "4",
-        },
-        {
-          about: this.$t("energyManageAbout5"),
-          photo: "5",
-        },
-      ];
+    data() {
+      return {};
     },
-  },
-};
+
+    mounted() {},
+
+    methods: {},
+    computed: {
+      t() {
+        const { t } = useI18n();
+        return t;
+      },
+      info() {
+        return [
+          {
+            about: this.$t("energyManageAbout1"),
+            photo: "1",
+          },
+          {
+            about: this.$t("energyManageAbout2"),
+            photo: "2",
+          },
+          {
+            about: this.$t("energyManageAbout3"),
+            photo: "3",
+          },
+          {
+            about: this.$t("energyManageAbout4"),
+            photo: "4",
+          },
+          {
+            about: this.$t("energyManageAbout5"),
+            photo: "5",
+          },
+        ];
+      },
+    },
+  };
 </script>
