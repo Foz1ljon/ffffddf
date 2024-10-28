@@ -82,36 +82,43 @@
       marques() {
         return [
           {
+            id: 1,
             title: "ConfigPro",
             style: "background: linear-gradient(180deg, #7C7EA6 0%, #15121B 100%);",
             desc: "1Конфигурация",
           },
           {
+            id: 2,
             title: "Сервер опроса",
             style: "background: linear-gradient(180deg, #FE36BB 0%, #230076 100%);",
             desc: "2Electricity",
           },
           {
+            id: 3,
             title: "Green Energy",
             style: "background: linear-gradient(180deg, #FFDF2C 0%, #00853C 100%);",
             desc: "3Мнемосхема",
           },
           {
+            id: 4,
             title: "Water",
             style: "background: linear-gradient(180deg, #32E0FF 0%, #A90049 100%);",
             desc: "4Мониторинг",
           },
           {
+            id: 5,
             title: "Predictive",
             style: "background: linear-gradient(180deg, #3971FF 0%, #9C00A5 100%);",
             desc: "5Помощник",
           },
           {
+            id: 6,
             title: "Water",
             style: "background: linear-gradient(180deg, #32E0FF 0%, #A90049 100%);",
             desc: "6Мониторинг",
           },
           {
+            id: 7,
             title: "Predictive",
             style: "background: linear-gradient(180deg, #3971FF 0%, #9C00A5 100%);",
             desc: "7Помощник",

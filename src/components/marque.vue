@@ -5,12 +5,13 @@
       <!-- <div class="w-[420px] h-[240px] def -ml-[420px]"></div> -->
       <div
         v-for="(el, i) in arr"
-        :key="`marquee-${i}`"
+        :key="`marquee-${el.id}`"
         class="w-[420px] h-[240px] flex items-end justify-between p-4 text-white text-[19px]"
-        :class="i == 0 ? 'reSize' : ''"
-        :style="el?.style"
+        :class="{ reSize: i == 0 }"
+        :style="[el?.style, `animation-play-state: ${isRunning};`]"
       >
         <p class="font-normal">{{ el?.desc }}</p>
+
         <p class="bold flex gap-2 items-center">
           <span> <Logo /> </span>{{ el?.title }}
         </p>
@@ -19,10 +20,10 @@
 
     <div class="flex justify-center py-4">
       <button
-        @click="isRunning = !isRunning"
+        @click="isRunning == 'paused' ? (isRunning = 'running') : (isRunning = 'paused')"
         class="flex justify-center items-center bg-[#B2B6BE] rounded-full"
       >
-        <p v-if="!isRunning" class="py-2.5 pr-2.5 px-4">
+        <p v-if="isRunning == 'paused'" class="py-2.5 pr-2.5 px-4">
           <Play />
         </p>
         <p v-else class="py-2.5 px-3.5">
@@ -49,9 +50,8 @@
     },
     data() {
       return {
-        isRunning: true,
+        isRunning: "running",
         arr: [...this.data],
-        px: 0,
       };
     },
     computed: {},
@@ -76,8 +76,6 @@
 
   .reSize {
     animation: resizer 10s infinite linear;
+    /* animation-play-state: running; */
   }
 </style>
- 
-
-fixed and worked play pause button
