@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "PtSans-Regular";
+  src: url("./fonts/PTSans-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "PtSans-Italic";
+  src: url("./fonts/PTSans-Italic.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PtSans-Bold";
+  src: url("./fonts/PTSans-Bold.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "PtSans-Regular";
+}
+
+.italic {
+  font-family: "PtSans-Italic";
+}
+
+.bold {
+  font-family: "PtSans-Bold";
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-69%, 0, 0);
+  }
+}
