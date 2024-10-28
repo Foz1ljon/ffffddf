@@ -84,7 +84,7 @@
         this.currentIndex = index;
       },
       startAutoSlide() {
-        this.interval = setInterval(this.nextSlide, 2000);
+        this.interval = setInterval(this.nextSlide, 10000);
         this.isPlaying = true;
       },
       stopAutoSlide() {
